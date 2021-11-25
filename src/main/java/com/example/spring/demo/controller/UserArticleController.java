@@ -3,16 +3,20 @@ package com.example.spring.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.spring.demo.service.ArticleService;
 import com.sbs.exam.demo.vo.Article;
 
 
 @Controller
 public class UserArticleController {
-	//인스턴스 변수
+	//인스턴스 변수 
+	@Autowired
+	private ArticleService articleService;
 	private int articleLastId;
 	private List<Article> articles;
 	
